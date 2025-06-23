@@ -2,7 +2,7 @@
 <main>
     <ul id="users">
         @for(user of users; track user.id) {
-            <li><app-user [user]="user" (select)="onUserSelected($event)" /></li>
+            <li><app-user [selected]="selectedUser?.id === user.id" [user]="user" (select)="onUserSelected($event)" /></li>
         }
     </ul>
     @if(selectedName !== '') {
